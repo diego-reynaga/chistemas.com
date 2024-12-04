@@ -117,9 +117,9 @@ sudo nano /etc/bind/named.conf.local
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "chistemas.com" IN {
+zone "dominioprueba.com" IN {
         type master;
-        file "/etc/bind/zonas/db.chistemas.com";
+        file "/etc/bind/zonas/db.dominioprueba";
 };
 
 zone "50.2.10.in-addr.arpa" IN {
@@ -138,22 +138,22 @@ zone "50.2.10.in-addr.arpa" IN {
 sudo mkdir /etc/bind/zonas
 ```
 ```bash
-sudo nano /etc/bind/zonas/db.chistemas.com
+sudo nano /etc/bind/zonas/db.dominioprueba.com
 ```
 ---------------
 ```bash
 $TTL    1D
-@       IN      SOA     ns1.chistemas.com. admin.chistemas.com. (
+@       IN      SOA     ns1.chistemas.com. admin.dominioprueba.com. (
                         20241202        ; Serial
                         12h             ; Refresh
                         15m             ; Retry
                         3w              ; Expire
                         2h      )       ; Negative Cache TTL
 ;
-@      IN      NS      ns1.chistemas.com.
+@      IN      NS      ns1.dominioprueba.com.
 ns1    IN      A       10.2.50.211
 www    IN      A       10.2.50.211
-@      IN      A       10.2.50.211     ; Este es el registro A para chistemas.com
+@      IN      A       10.2.50.211     ; Este es el registro A para dominioprueba.com
 ```
 ------------------
 ```bash
@@ -162,21 +162,21 @@ sudo nano /etc/bind/zonas/db.10.2.50
 ------------------
 ```bash
 $TTL    1D
-@       IN      SOA     ns1.chistemas.com. admin.chistemas.com. (
+@       IN      SOA     ns1.dominioprueba.com. admin.dominioprueba.com. (
                         20241202        ; Serial
                         12h             ; Refresh
                         15m             ; Retry
                         3w              ; Expire
                         2h      )       ; Negative Cache TTL
 ;
-@      IN      NS      ns1.chistemas.com.
+@      IN      NS      ns1.dominioprueba.com.
 ns1    IN      A       10.2.50.211    ; Agregar este registro A
 www    IN      A       10.2.50.211
 ```
 ---------------------
 ### 11. Comprobar los archivos de zona que acabamos de crear para ver si todo esta bien.
 ```bash
-sudo named-checkzone chistemas.com /etc/bind/zonas/db.chistemas.com
+sudo named-checkzone dominioprueba.com /etc/bind/zonas/db.dominioprueba.com
 ```
 ```bash
 sudo named-checkzone db.10.50.10.in-addr.arpa /etc/bind/zonas/db.10.2.50
@@ -202,17 +202,17 @@ sudo apt install apache2
 ```
 ### 15. Configuramos el sitio virtual para Apache
 ```bash
-sudo nano /etc/apache2/sites-available/chistemas.com.conf 
+sudo nano /etc/apache2/sites-available/dominioprueba.com.conf 
 ```
 --------------------
 ```bash
 <VirtualHost *:80>
-    ServerAdmin admin@chistemas.com
-    ServerName chistemas.com
-    ServerAlias www.chistemas.com
-    DocumentRoot /var/www/chistemas.com
-    ErrorLog ${APACHE_LOG_DIR}/chistemas.com_error.log
-    CustomLog ${APACHE_LOG_DIR}/chistemas.com_access.log combined
+    ServerAdmin admin@dominioprueba.com
+    ServerName dominioprueba.com
+    ServerAlias www.dominioprueba.com
+    DocumentRoot /var/www/dominioprueba.com
+    ErrorLog ${APACHE_LOG_DIR}/dominioprueba.com_error.log
+    CustomLog ${APACHE_LOG_DIR}/dominioprueba.com_access.log combined
 </VirtualHost>
 ```
 --------------------
@@ -228,7 +228,7 @@ sudo apt install git -y
 cd /var/www/
 ```
 ```bash
-sudo git clone https://github.com/diego-reynaga/chistemas.com 
+sudo git clone https://github.com/diego-reynaga/dominioprueba.com 
 ```
 >[!NOTE]
 >Ahora volvemos al inicio.
@@ -237,7 +237,7 @@ cd ..
 ```
 ### 18. Habilitamos el sitio virtual en Apache.
 ```bash
-sudo a2ensite chistemas.com.conf
+sudo a2ensite dominioprueba.com.conf
 ```
 ### 19. Recargará su configuración de Apache.
 ```bash
