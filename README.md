@@ -86,5 +86,15 @@ RESOLVCONF=no
 # startup options for the server
 OPTIONS="-u bind -4"
 ```
+### 8. Comprobar la configuración de Bind9 y reiniciar el servicio si todo está bien, luego lanzar status para ver si no hay errores.
+```bash
+sudo named-checkconf
+```
+```bash
+sudo systemctl restart bind9
+'''
+```bash
+systemctl status bind9
+```
 >[!NOTE]
 >NOTA ESPECIAL 
