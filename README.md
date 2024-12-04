@@ -71,5 +71,20 @@ options {
         #listen-on-v6 { any; };
 };
 ```
+
+### 7. Obligar el uso único de IPv4
+```bash
+sudo nano /etc/default/named
+```
+>[!NOTE]
+>Modificar la línea dejándola así: OPTIONS="-u bind -4"
+```bash
+#
+# run resolvconf?
+RESOLVCONF=no
+
+# startup options for the server
+OPTIONS="-u bind -4"
+```
 >[!NOTE]
 >NOTA ESPECIAL 
