@@ -142,3 +142,29 @@ ns1    IN      A       10.2.50.211
 www    IN      A       10.2.50.211
 @      IN      A       10.2.50.211     ; Este es el registro A para chistemas.com
 ```
+------------------
+```bash
+sudo nano /etc/bind/zonas/db.10.2.50
+```
+------------------
+```bash
+$TTL    1D
+@       IN      SOA     ns1.chistemas.com. admin.chistemas.com. (
+                        20241202        ; Serial
+                        12h             ; Refresh
+                        15m             ; Retry
+                        3w              ; Expire
+                        2h      )       ; Negative Cache TTL
+;
+@      IN      NS      ns1.chistemas.com.
+ns1    IN      A       10.2.50.211    ; Agregar este registro A
+www    IN      A       10.2.50.211
+```
+---------------------
+### 11. Comprobar los archivos de zona que acabamos de crear para ver si todo esta bien.
+```bash
+sudo named-checkzone chistemas.com /etc/bind/zonas/db.chistemas.com
+```
+```bash
+sudo named-checkzone db.10.50.10.in-addr.arpa /etc/bind/zonas/db.10.2.50
+```
