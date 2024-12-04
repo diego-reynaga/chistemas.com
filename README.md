@@ -92,7 +92,7 @@ sudo named-checkconf
 ```
 ```bash
 sudo systemctl restart bind9
-'''
+```
 ```bash
 systemctl status bind9
 ```
