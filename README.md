@@ -210,10 +210,37 @@ sudo apt install git -y
 >[!NOTE]
 >Git es un sistema de control de versiones de código fuente.
 
-### 1X. Nos dirigimos a la carpeta www y clonamos el repositorio de la página web.
+### 17. Nos dirigimos a la carpeta www y clonamos el repositorio de la página web.
 ```bash
 cd /var/www/
 ```
 ```bash
 sudo git clone https://github.com/diego-reynaga/chistemas.com 
+```
+>[!NOTE]
+>Ahora volvemos al inicio.
+```bash
+cd ..
+```
+### 18. Habilitamos el sitio virtual en Apache.
+```bash
+sudo a2ensite chistemas.com.conf
+```
+### 19. Recargará su configuración de Apache.
+```bash
+sudo systemctl reload apache2
+```
+### 20. Deshabilitar un sitio virtual en Apache
+>[!NOTE]
+>Desactivamos sitio predeterminado de Apache.
+```bash
+sudo a2dissite 000-default.conf
+```
+### 21. Recargamos su configuración de Apache para guardar los cambios.
+```bash
+sudo systemctl reload apache2
+```
+### 22. Finalmente instalamos php.
+```bash
+sudo apt install php -y
 ```
