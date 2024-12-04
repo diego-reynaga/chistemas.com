@@ -13,6 +13,10 @@ sudo apt install bind9 bind9-utils nano
 ```bash
 systemctl status bind9
 ```
+### instalamos UFW.
+>[!NOTE]
+>una herramienta sencilla para configurar un firewall en Linux. 
+
 
 >[!NOTE]
 >NOTA ESPECIAL 
