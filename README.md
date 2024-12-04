@@ -72,10 +72,10 @@ options {
 };
 ```
 >[!NOTE]
->-listen-on define la dirección donde estará escuchando Bind9, si no sabes con exactitud, utiliza la opción any.
->-allow-query define desde que redes o ip es posible realizar consultas, normalmente la misma red a la que pertenece el servidor DNS.
->-forwarders define servidores DNS a los cuales Bind9 reenviará las consultas que el no pueda resolver.
->-dnssec-validation define si se validará un dnssec.
+> -listen-on define la dirección donde estará escuchando Bind9, si no sabes con exactitud, utiliza la opción any.
+> -allow-query define desde que redes o ip es posible realizar consultas, normalmente la misma red a la que pertenece el servidor DNS.
+> -forwarders define servidores DNS a los cuales Bind9 reenviará las consultas que el no pueda resolver.
+> -dnssec-validation define si se validará un dnssec.
 
 ### 7. Obligar el uso único de IPv4
 ```bash
@@ -126,11 +126,11 @@ zone "50.2.10.in-addr.arpa" IN {
 };
 ```
 >[!NOTE]
->-La zona chistemas.com es la zona directa de nuestro DNS.
->-La zona 20.10.10.in-addr.arpa es la zona inversa para nuestros PTR.
+> -La zona chistemas.com es la zona directa de nuestro DNS.
+> -La zona 20.10.10.in-addr.arpa es la zona inversa para nuestros PTR.
 
 >[!NOTE]
->-Los archivos de zona configurados hay que crearlos porque lógicamente no existen
+> -Los archivos de zona configurados hay que crearlos porque lógicamente no existen
 ### 10. Creando el directorio donde guardaremos los archivos de zonas y luego creamos las dos zonas, la directa y la inversa.
 ```bash
 sudo mkdir /etc/bind/zonas
