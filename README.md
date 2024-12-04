@@ -96,5 +96,31 @@ sudo systemctl restart bind9
 ```bash
 systemctl status bind9
 ```
->[!NOTE]
->NOTA ESPECIAL 
+### 9. Agregar las Zonas
+```bash
+sudo nano /etc/bind/named.conf.local
+'''
+-----------------
+```bash
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "chistemas.com" IN {
+        type master;
+        file "/etc/bind/zonas/db.chistemas.com";
+};
+
+zone "50.2.10.in-addr.arpa" IN {
+    type master;
+    file "/etc/bind/zonas/db.10.2.50";
+};
+```
+### 10. Creando el directorio donde guardaremos los archivos de zonas y luego creamos las dos zonas, la directa y la inversa.
+```bash
+sudo mkdir /etc/bind/zonas
+```
