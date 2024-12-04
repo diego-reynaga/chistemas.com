@@ -168,3 +168,58 @@ sudo named-checkzone chistemas.com /etc/bind/zonas/db.chistemas.com
 ```bash
 sudo named-checkzone db.10.50.10.in-addr.arpa /etc/bind/zonas/db.10.2.50
 ```
+### 12. Reiniciamos nuevamente
+```bash
+sudo systemctl restart bind9
+```
+
+
+
+
+
+#Aun falta
+```bash
+sudo nano /etc/resolv.conf
+```
+-----------------
+```bash
+nameserver 10.2.50.211
+nameserver 127.0.0.1
+```
+
+
+
+
+
+
+### 13. Instalamos apache
+```bash
+sudo apt install apache2
+```
+#AUN FALTA
+```bash
+sudo nano /etc/apache2/sites-available/chistemas.com.conf 
+```
+--------------------
+```bash
+<VirtualHost *:80>
+    ServerAdmin admin@chistemas.com
+    ServerName chistemas.com
+    ServerAlias www.chistemas.com
+    DocumentRoot /var/www/chistemas.com
+    ErrorLog ${APACHE_LOG_DIR}/chistemas.com_error.log
+    CustomLog ${APACHE_LOG_DIR}/chistemas.com_access.log combined
+</VirtualHost>
+```
+--------------------
+### 1X. Instalamos git
+```bash
+sudo apt install git -y
+```
+### 1X. Nos dirigimos a la carpeta www y clonamos el repositorio de la página web.
+```bash
+cd /var/www/
+```
+```bash
+sudo git clone https://github.com/diego-reynaga/chistemas.com 
+```
