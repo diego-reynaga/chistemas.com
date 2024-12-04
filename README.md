@@ -172,12 +172,7 @@ sudo named-checkzone db.10.50.10.in-addr.arpa /etc/bind/zonas/db.10.2.50
 ```bash
 sudo systemctl restart bind9
 ```
-
-
-
-
-
-#Aun falta
+### 13. configurar los servidores DNS 
 ```bash
 sudo nano /etc/resolv.conf
 ```
@@ -186,17 +181,13 @@ sudo nano /etc/resolv.conf
 nameserver 10.2.50.211
 nameserver 127.0.0.1
 ```
+#CONFIGURAR EL SERVIDOR WEB
 
-
-
-
-
-
-### 13. Instalamos apache
+### 14. Instalamos apache
 ```bash
 sudo apt install apache2
 ```
-#AUN FALTA
+### 15. Configuramos el sitio virtual para Apache
 ```bash
 sudo nano /etc/apache2/sites-available/chistemas.com.conf 
 ```
@@ -212,10 +203,13 @@ sudo nano /etc/apache2/sites-available/chistemas.com.conf
 </VirtualHost>
 ```
 --------------------
-### 1X. Instalamos git
+### 16. Instalamos git
 ```bash
 sudo apt install git -y
 ```
+>[!NOTE]
+>Git es un sistema de control de versiones de código fuente.
+
 ### 1X. Nos dirigimos a la carpeta www y clonamos el repositorio de la página web.
 ```bash
 cd /var/www/
