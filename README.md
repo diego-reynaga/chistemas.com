@@ -132,7 +132,7 @@ zone "50.2.10.in-addr.arpa" IN {
 >La zona 20.10.10.in-addr.arpa es la zona inversa.
 
 >[!NOTE]
-> -Los archivos de zona configurados hay que crearlos porque lógicamente no existen
+>Los archivos de zona configurados hay que crearlos porque lógicamente no existen
 ### 10. Creando el directorio donde guardaremos los archivos de zonas y luego creamos las dos zonas, la directa y la inversa.
 ```bash
 sudo mkdir /etc/bind/zonas
@@ -194,7 +194,7 @@ sudo nano /etc/resolv.conf
 nameserver 10.2.50.211
 nameserver 127.0.0.1
 ```
-#CONFIGURAR EL SERVIDOR WEB
+# CONFIGURAR EL SERVIDOR WEB
 
 ### 14. Instalamos apache
 ```bash
