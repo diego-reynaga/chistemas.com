@@ -99,7 +99,7 @@ systemctl status bind9
 ### 9. Agregar las Zonas
 ```bash
 sudo nano /etc/bind/named.conf.local
-'''
+```
 -----------------
 ```bash
 //
