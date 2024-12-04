@@ -124,3 +124,21 @@ zone "50.2.10.in-addr.arpa" IN {
 ```bash
 sudo mkdir /etc/bind/zonas
 ```
+```bash
+sudo nano /etc/bind/zonas/db.chistemas.com
+```
+---------------
+```bash
+$TTL    1D
+@       IN      SOA     ns1.chistemas.com. admin.chistemas.com. (
+                        20241202        ; Serial
+                        12h             ; Refresh
+                        15m             ; Retry
+                        3w              ; Expire
+                        2h      )       ; Negative Cache TTL
+;
+@      IN      NS      ns1.chistemas.com.
+ns1    IN      A       10.2.50.211
+www    IN      A       10.2.50.211
+@      IN      A       10.2.50.211     ; Este es el registro A para chistemas.com
+```
