@@ -15,10 +15,14 @@ systemctl status bind9
 ```
 ### 4.instalamos UFW.
 >[!NOTE]
->una herramienta sencilla para configurar un firewall en Linux. 
+>es una herramienta sencilla para configurar un firewall en Linux. 
 ```bash
 sudo apt install ufw
 ```
 
+### 5. Permitir de forma sencilla en el Firewall local, el acceso al puerto y protocolo que utiliza Bind9
+```bash
+sudo ufw allow bind9
+```
 >[!NOTE]
 >NOTA ESPECIAL 
