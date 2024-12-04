@@ -71,6 +71,11 @@ options {
         #listen-on-v6 { any; };
 };
 ```
+>[!NOTE]
+>listen-on define la dirección donde estará escuchando Bind9, si no sabes con exactitud, utiliza la opción any.
+>allow-query define desde que redes o ip es posible realizar consultas, normalmente la misma red a la que pertenece el servidor DNS.
+>forwarders define servidores DNS a los cuales Bind9 reenviará las consultas que el no pueda resolver.
+>dnssec-validation define si se validará un dnssec.
 
 ### 7. Obligar el uso único de IPv4
 ```bash
